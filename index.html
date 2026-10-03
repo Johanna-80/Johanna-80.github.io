@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio de Johanna Vásquez — QA Engineer Jr. con formación en testing manual, validación de API (Postman) y gestión de casos de prueba en Jira.">
+  <meta name="author" content="Johanna Vásquez">
+
+  <title>Johanna Vásquez | QA Engineer Jr.</title>
+
+  <!-- ============ OPEN GRAPH / REDES SOCIALES ============ -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Johanna Vásquez | QA Engineer Jr.">
+  <meta property="og:description" content="Testing manual, validación de API y aseguramiento de calidad de software.">
+  <meta property="og:image" content="https://placehold.co/1200x630/7c3aed/ffffff?text=Johanna+V%C3%A1squez+QA+Engineer">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- ============ FAVICON SVG INLINE ============ -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%237c3aed%22 stroke-width=%222.2%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M9 12l2 2 4-4%22/><circle cx=%2212%22 cy=%2212%22 r=%229%22/></svg>">
+
+  <!-- ============ FUENTES ============ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --font-primary: 'Epilogue', sans-serif;
+      --font-secondary: 'Work Sans', sans-serif;
+      --color-bg: #ffffff;
+      --color-text: #17171a;
+      --color-muted: #55575e;
+      --color-accent: #7c3aed;
+      --color-accent-soft: #ede9fe;
+      --color-accent-dark: #5b21b6;
+      --color-light-bg: #f7f5fb;
+      --color-border: #eaeaf0;
+      --max-width: 1180px;
+      --header-height: 78px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-secondary);
+      color: var(--color-text);
+      line-height: 1.65;
+      background: var(--color-bg);
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, h5 {
+      font-family: var(--font-primary);
+      font-weight: 800;
+      line-height: 1.18;
+      margin-bottom: 1rem;
+      letter-spacing: -0.5px;
+    }
+    a { text-decoration: none; color: inherit; transition: 0.3s; }
+    ul { list-style: none; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ============ UTILIDADES ============ */
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+    .section { padding: 90px 0; }
+    .section-tight { padding: 60px 0; }
+    .eyebrow {
+      display: inline-block;
+      font-family: var(--font-secondary);
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: clamp(28px, 3.4vw, 42px);
+      margin-bottom: 16px;
+    }
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--color-muted);
+      max-width: 680px;
+      margin-bottom: 50px;
+    }
+
+    /* ============ BOTONES ============ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: 50px;
+      font-family: var(--font-secondary);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: 2px solid transparent;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--color-text);
+      color: #fff;
+      border-color: var(--color-text);
+    }
+    .btn-primary:hover {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--color-text);
+      border-color: var(--color-text);
+    }
+    .btn-outline:hover {
+      background: var(--color-accent);
+      color: #fff;
+      border-color: var(--color-accent);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.22);
+    }
+    /* Botón contacto del header — morado, con ícono */
+    .btn-contact {
+      background: var(--color-accent);
+      color: #fff;
+      border-color: var(--color-accent);
+      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.28);
+    }
+    .btn-contact:hover {
+      background: var(--color-accent-dark);
+      border-color: var(--color-accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(124, 58, 237, 0.4);
+    }
+    .btn-contact svg { flex-shrink: 0; }
+
+    /* ============ PRELOADER ============ */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      background: #17171a;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    #preloader.hide { opacity: 0; visibility: hidden; }
+    .loader {
+      width: 46px;
+      height: 46px;
+      border: 3px solid rgba(255,255,255,0.12);
+      border-top-color: var(--color-accent);
+      border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ============ HEADER ============ */
+    header {
+      position: sticky;
+      top: 0;
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+      z-index: 1000;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-primary);
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -0.4px;
+    }
+    .logo-icon { width: 26px; height: 26px; stroke: var(--color-accent); stroke-width: 2.2; fill: none; }
+    .logo-dot { color: var(--color-accent); }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+    .nav-links a {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--color-text);
+    }
+    .nav-links a:hover { color: var(--color-accent); }
+    .nav-links .btn { padding: 9px 20px; font-size: 0.88rem; }
+
+    /* Menú hamburguesa */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 1100;
+    }
+    .menu-toggle span {
+      display: block;
+      width: 26px;
+      height: 2.5px;
+      background: var(--color-text);
+      border-radius: 2px;
+      transition: 0.3s;
+      margin: 5px 0;
+    }
+    .menu-toggle.active span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    /* ============ HERO ============ */
+    .hero {
+      padding: 70px 0 90px;
+      background:
+        radial-gradient(circle at 85% 20%, var(--color-accent-soft) 0%, transparent 45%),
+        radial-gradient(circle at 10% 90%, #f3ecff 0%, transparent 40%);
+    }
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: clamp(38px, 4.6vw, 62px);
+      margin-bottom: 22px;
+    }
+    .hero h1 .accent { color: var(--color-accent); }
+    .hero-role {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-bottom: 20px;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 1.2vw, 1.12rem);
+      color: var(--color-muted);
+      max-width: 560px;
+      margin-bottom: 34px;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-photo { position: relative; }
+    .hero-photo img {
+      width: 100%;
+      aspect-ratio: 1 / 1.1;
+      object-fit: cover;
+      border-radius: 22px;
+      box-shadow:
+        18px 18px 0 rgba(124, 58, 237, 0.10),
+        0 0 0 2px var(--color-accent);
+    }
+
+    /* ============ SOBRE MÍ ============ */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-photo {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 14px 14px 0 var(--color-accent-soft);
+      aspect-ratio: 4 / 5;
+    }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .about-text p { margin-bottom: 16px; color: #3a3a42; }
+    .about-quote {
+      border-left: 3px solid var(--color-accent);
+      padding: 4px 0 4px 18px;
+      font-style: italic;
+      color: var(--color-muted);
+      margin-top: 22px;
+    }
+
+    /* ============ HABILIDADES ============ */
+    .section-skills { background: var(--color-text); color: #fff; }
+    .section-skills .section-title { color: #fff; }
+    .section-skills .section-subtitle { color: #b7b7c1; }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+    .skill-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 14px;
+      padding: 24px 22px;
+      transition: 0.3s;
+    }
+    .skill-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--color-accent);
+      background: rgba(124,58,237,0.08);
+    }
+    .skill-card h4 {
+      color: var(--color-accent);
+      font-size: 0.78rem;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-tag {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 50px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      font-size: 0.82rem;
+      color: #e9e9ee;
+    }
+
+    /* ============ PROYECTOS ============ */
+    .project-card {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 110px;
+    }
+    .project-card:last-of-type { margin-bottom: 0; }
+    .project-card.reverse { direction: rtl; }
+    .project-card.reverse > * { direction: ltr; }
+    .project-card h3 { font-size: clamp(22px, 2.2vw, 28px); margin-bottom: 14px; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+    .project-tag {
+      padding: 4px 12px;
+      border-radius: 50px;
+      background: var(--color-accent-soft);
+      color: var(--color-accent-dark);
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+    .project-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 20px;
+      background: var(--color-light-bg);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 22px;
+      border-left: 3px solid var(--color-accent);
+    }
+    .project-meta .label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--color-accent);
+      margin-bottom: 2px;
+    }
+    .project-meta .value { font-size: 0.92rem; color: var(--color-text); font-weight: 500; }
+    .project-activities { list-style: none; margin-bottom: 22px; }
+    .project-activities li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      color: #3a3a42;
+      text-align: justify;
+    }
+    .project-activities li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-accent);
+    }
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      color: var(--color-accent-dark);
+      font-size: 0.95rem;
+    }
+    .project-link:hover { gap: 14px; color: var(--color-accent); }
+
+    .project-visual {
+      aspect-ratio: 4 / 3;
+      background: linear-gradient(135deg, #f4eeff 0%, #e8dcff 100%);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      box-shadow: 0 12px 32px rgba(124, 58, 237, 0.10);
+      overflow: hidden;
+      position: relative;
+    }
+    .project-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+    .project-visual .placeholder-art {
+      text-align: center;
+      color: var(--color-accent-dark);
+      font-family: var(--font-primary);
+      font-weight: 700;
+      padding: 20px;
+    }
+    .project-visual .placeholder-art .big {
+      display: block;
+      font-size: 3rem;
+      margin-bottom: 8px;
+    }
+
+    /* ============ EXPERIENCIA TRANSFERIBLE ============ */
+    .section-transfer { background: var(--color-light-bg); }
+    .transfer-list { display: grid; gap: 24px; margin-top: 30px; }
+    .transfer-item {
+      background: #fff;
+      border-radius: 14px;
+      padding: 26px 28px;
+      border-left: 4px solid var(--color-accent);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    }
+    .transfer-item h4 { font-size: 1.05rem; margin-bottom: 4px; }
+    .transfer-item .role-line {
+      font-size: 0.85rem;
+      color: var(--color-accent-dark);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .transfer-item p { font-size: 0.94rem; color: #3a3a42; }
+    .soft-skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 34px; }
+    .soft-skill {
+      padding: 8px 16px;
+      border-radius: 50px;
+      background: #fff;
+      border: 1px solid var(--color-border);
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--color-text);
+      transition: 0.25s;
+    }
+    .soft-skill:hover {
+      background: var(--color-accent);
+      color: #fff;
+      border-color: var(--color-accent);
+    }
+
+    /* ============ FORMACIÓN ============ */
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 26px;
+      margin-top: 20px;
+    }
+    .edu-card {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 14px;
+      padding: 28px 26px;
+      transition: 0.3s;
+    }
+    .edu-card:hover {
+      border-color: var(--color-accent);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(124, 58, 237, 0.10);
+    }
+    .edu-card .year {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 12px;
+    }
+    .edu-card h4 { font-size: 1.05rem; margin-bottom: 6px; }
+    .edu-card .institution { font-size: 0.9rem; color: var(--color-muted); }
+    .langs { margin-top: 34px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .lang-badge {
+      padding: 10px 20px;
+      border-radius: 50px;
+      background: var(--color-accent-soft);
+      color: var(--color-accent-dark);
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    /* ============ CONTACTO / FOOTER ============ */
+    footer {
+      background: var(--color-text);
+      color: #fff;
+      padding: 80px 0 40px;
+      text-align: center;
+    }
+    footer h2 { color: #fff; font-size: clamp(26px, 3vw, 38px); margin-bottom: 16px; }
+    footer p { color: #b7b7c1; max-width: 600px; margin: 0 auto 30px; }
+    .footer-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+    footer .btn-primary {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: #fff;
+    }
+    footer .btn-primary:hover {
+      background: #fff;
+      border-color: #fff;
+      color: var(--color-text);
+    }
+    footer .btn-outline { border-color: rgba(255,255,255,0.35); color: #fff; }
+    footer .btn-outline:hover {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: #fff;
+    }
+    .footer-meta {
+      border-top: 1px solid rgba(255,255,255,0.10);
+      padding-top: 26px;
+      font-size: 0.82rem;
+      color: #8a8a95;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .social-links a {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+    }
+    .social-links a:hover {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      transform: translateY(-3px);
+    }
+    .social-links svg { width: 18px; height: 18px; fill: #fff; }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 900px) {
+      .menu-toggle { display: block; }
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 78%;
+        max-width: 320px;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 40px 32px;
+        gap: 22px;
+        box-shadow: -12px 0 40px rgba(0,0,0,0.12);
+        transition: right 0.35s ease;
+      }
+      .nav-links.open { right: 0; }
+      .nav-links a { font-size: 1.05rem; }
+      .nav-links .btn { padding: 12px 26px; font-size: 0.95rem; }
+
+      .hero-layout { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+      .hero-photo { max-width: 320px; margin: 0 auto; }
+      .hero-actions { justify-content: center; }
+      .hero-sub { margin-left: auto; margin-right: auto; }
+
+      .about-layout { grid-template-columns: 1fr; gap: 40px; }
+      .about-photo { max-width: 320px; margin: 0 auto; }
+
+      .project-card,
+      .project-card.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+        gap: 34px;
+        margin-bottom: 80px;
+      }
+      .section { padding: 70px 0; }
+    }
+
+    @media (max-width: 480px) {
+      .project-meta { grid-template-columns: 1fr; }
+      .hero-actions .btn,
+      .footer-buttons .btn { width: 100%; }
+    }
+
+    /* Animación de entrada suave */
+    .fade-up { opacity: 0; transform: translateY(24px); transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <div id="preloader" aria-hidden="true"><div class="loader"></div></div>
+
+  <!-- ============ HEADER ============ -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo" aria-label="Inicio">
+        <svg xmlns="http://www.w3.org/2000/svg" class="logo-icon" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 12l2 2 4-4"/>
+          <circle cx="12" cy="12" r="9"/>
+        </svg>
+        <span>Johanna Vásquez<span class="logo-dot">.</span></span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#experiencia">Experiencia</a></li>
+          <li><a href="#formacion">Formación</a></li>
+          <li>
+            <a href="#contacto" class="btn btn-contact">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+              Contacto
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container hero-layout">
+      <div>
+        <p class="hero-role">QA Engineer Jr. · Manual & API Testing</p>
+        <h1>
+          Calidad de software con <span class="accent">visión de negocio</span> y datos.
+        </h1>
+        <p class="hero-sub">
+          Formación en QA Engineering, Administración de Empresas e Inteligencia de Negocios.
+          Enfocada en el diseño y ejecución de pruebas funcionales y de regresión que conectan los
+          requisitos técnicos con los objetivos comerciales del producto.
+        </p>
+        <div class="hero-actions">
+          <a href="#proyectos" class="btn btn-primary">Ver proyectos de QA</a>
+          <a href="#contacto" class="btn btn-outline">Contactarme</a>
+        </div>
+      </div>
+      <div class="hero-photo fade-up">
+        <img src="assets/img/johanna.jpg"
+             alt="Foto profesional de Johanna Vásquez"
+             loading="lazy"
+             onerror="this.onerror=null; this.src='https://placehold.co/480x530/ede9fe/5b21b6?text=Johanna+V%C3%A1squez';">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOBRE MÍ ============ -->
+  <section id="sobre-mi" class="section">
+    <div class="container about-layout">
+      <div class="about-photo fade-up">
+        <img src="assets/img/johanna-about.jpg"
+             alt="Johanna Vásquez"
+             loading="lazy"
+             onerror="this.onerror=null; this.src='https://placehold.co/500x620/f7f5fb/5b21b6?text=Johanna+V%C3%A1squez';">
+      </div>
+      <div class="about-text fade-up">
+        <span class="eyebrow">Sobre mí</span>
+        <h2 class="section-title">De la administración al aseguramiento de calidad.</h2>
+
+        <p>
+          Soy profesional en <strong>Administración de Empresas</strong> con formación en
+          <strong>Inteligencia de Negocios</strong> y actualmente cursando el certificado de
+          <strong>QA Engineering</strong> en TripleTen. Mi perfil integra la visión comercial y el
+          análisis de datos con competencias técnicas de testing.
+        </p>
+
+        <p>
+          A lo largo de mi formación he desarrollado <strong>proyectos prácticos de testing manual y
+          validación de API</strong> sobre aplicaciones web (Urban Routes y Urban Grocers), aplicando
+          diseño de casos de prueba, técnicas de partición de equivalencia y valores límite,
+          documentación de defectos en Jira y ejecución de solicitudes HTTP en Postman.
+        </p>
+
+        <p>
+          Mi experiencia previa liderando procesos administrativos y coordinando equipos me dio
+          habilidades transferibles clave para QA: <strong>comunicación asertiva, priorización de
+          tareas y pensamiento analítico</strong>, útiles para articular al equipo de negocio con el
+          equipo de desarrollo.
+        </p>
+
+        <p class="about-quote">
+          "Mi objetivo es asegurar que el producto final cumpla tanto con los requisitos técnicos
+          como con los objetivos comerciales."
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HABILIDADES ============ -->
+  <section id="habilidades" class="section section-skills">
+    <div class="container">
+      <span class="eyebrow">Habilidades técnicas</span>
+      <h2 class="section-title">Herramientas y metodologías</h2>
+      <p class="section-subtitle">
+        Conocimientos adquiridos durante mi formación en QA y aplicados en proyectos prácticos de testing.
+      </p>
+
+      <div class="skills-grid">
+        <div class="skill-card fade-up">
+          <h4>Testing</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Testing manual</span>
+            <span class="skill-tag">Pruebas funcionales</span>
+            <span class="skill-tag">Pruebas de regresión</span>
+            <span class="skill-tag">Pruebas de UI/UX</span>
+            <span class="skill-tag">Diseño de casos de prueba</span>
+          </div>
+        </div>
+
+        <div class="skill-card fade-up">
+          <h4>Diseño de pruebas</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Partición de equivalencia</span>
+            <span class="skill-tag">Análisis de valores límite</span>
+            <span class="skill-tag">Mapas mentales</span>
+            <span class="skill-tag">Diagramas de flujo</span>
+          </div>
+        </div>
+
+        <div class="skill-card fade-up">
+          <h4>Herramientas</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Postman</span>
+            <span class="skill-tag">Jira</span>
+            <span class="skill-tag">Apidoc</span>
+          </div>
+        </div>
+
+        <div class="skill-card fade-up">
+          <h4>Perfil complementario</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Administración de Empresas</span>
+            <span class="skill-tag">Inteligencia de Negocios</span>
+            <span class="skill-tag">Gestión de Proyectos</span>
+            <span class="skill-tag">Análisis de datos</span>
+            <span class="skill-tag">Optimización de procesos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROYECTOS ============ -->
+  <section id="proyectos" class="section">
+    <div class="container">
+      <span class="eyebrow">Proyectos de QA</span>
+      <h2 class="section-title">Casos prácticos de aseguramiento de calidad</h2>
+      <p class="section-subtitle">
+        Cada proyecto describe la aplicación probada, el tipo de pruebas realizado, las herramientas
+        utilizadas y las principales actividades desarrolladas.
+      </p>
+
+      <!-- ===== Proyecto 1: Regresión Urban Routes ===== -->
+      <article class="project-card fade-up">
+        <div class="project-content">
+          <h3>Pruebas de Regresión — Urban Routes</h3>
+          <div class="project-tags">
+            <span class="project-tag">Testing Manual</span>
+            <span class="project-tag">Regresión</span>
+            <span class="project-tag">UI/UX</span>
+          </div>
+
+          <div class="project-meta">
+            <div>
+              <div class="label">Aplicación probada</div>
+              <div class="value">Urban Routes — app de transporte (web)</div>
+            </div>
+            <div>
+              <div class="label">Tipo de pruebas</div>
+              <div class="value">Regresión · UI/UX · Funcional</div>
+            </div>
+            <div>
+              <div class="label">Herramientas</div>
+              <div class="value">Jira · Google Sheets</div>
+            </div>
+            <div>
+              <div class="label">Modalidad</div>
+              <div class="value">Proyecto académico (TripleTen)</div>
+            </div>
+          </div>
+
+          <p style="margin-bottom: 18px; color:#3a3a42;">
+            Verifiqué la estabilidad de la aplicación de transporte Urban Routes después de una
+            actualización, asegurando que la funcionalidad y la experiencia de usuario siguieran
+            operativas tras los cambios.
+          </p>
+
+          <ul class="project-activities">
+            <li>Diseñé y ejecuté casos de prueba integrales para validar la funcionalidad post-actualización.</li>
+            <li>Documenté y reporté fallos críticos mediante informes detallados sobre discrepancias e inconsistencias detectadas.</li>
+            <li>Validé el correcto funcionamiento de los flujos principales y de la experiencia de usuario (UI/UX).</li>
+          </ul>
+
+          <a href="https://github.com/Johanna-80" target="_blank" rel="noopener" class="project-link">
+            Ver repositorio en GitHub →
+          </a>
+        </div>
+
+        <div class="project-visual">
+          <img src="assets/img/proyecto-regresion.jpg"
+               alt="Captura de casos de prueba de regresión — Urban Routes"
+               loading="lazy"
+               onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder-art&quot;><span class=&quot;big&quot;>🧪</span>Regresión · UI/UX</div>';">
+        </div>
+      </article>
+
+      <!-- ===== Proyecto 2: Técnicas de Testing Urban Routes ===== -->
+      <article class="project-card reverse fade-up">
+        <div class="project-content">
+          <h3>Implementación de Técnicas de Testing — Urban Routes</h3>
+          <div class="project-tags">
+            <span class="project-tag">Diseño de Casos</span>
+            <span class="project-tag">Análisis de Valores Límite</span>
+            <span class="project-tag">Partición de Equivalencia</span>
+          </div>
+
+          <div class="project-meta">
+            <div>
+              <div class="label">Aplicación probada</div>
+              <div class="value">Urban Routes — flujo "Auto compartido" y registro</div>
+            </div>
+            <div>
+              <div class="label">Tipo de pruebas</div>
+              <div class="value">Diseño de pruebas · Lógica de negocio</div>
+            </div>
+            <div>
+              <div class="label">Herramientas</div>
+              <div class="value">Mapas mentales · Diagramas de flujo</div>
+            </div>
+            <div>
+              <div class="label">Modalidad</div>
+              <div class="value">Proyecto académico (TripleTen)</div>
+            </div>
+          </div>
+
+          <p style="margin-bottom: 18px; color:#3a3a42;">
+            Apliqué técnicas formales de diseño de pruebas para maximizar la cobertura de escenarios
+            y validar la lógica de negocio de funciones específicas de la aplicación.
+          </p>
+
+          <ul class="project-activities">
+            <li>Modelé escenarios de prueba mediante mapas mentales para la función "Agregar Licencia de Conducir".</li>
+            <li>Apliqué clases de equivalencia y análisis de valores límite en formularios de registro.</li>
+            <li>Diseñé diagramas de flujo para los procesos de cálculo de tarifas y tiempos del servicio de auto compartido.</li>
+            <li>Desarrollé casos de prueba específicos que validaron la precisión matemática y operativa del servicio.</li>
+          </ul>
+
+          <a href="https://github.com/Johanna-80" target="_blank" rel="noopener" class="project-link">
+            Ver repositorio en GitHub →
+          </a>
+        </div>
+
+        <div class="project-visual">
+          <img src="assets/img/proyecto-tecnicas.jpg"
+               alt="Mapa mental y diagrama de flujo — diseño de pruebas"
+               loading="lazy"
+               onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder-art&quot;><span class=&quot;big&quot;>🧭</span>Diseño de pruebas</div>';">
+        </div>
+      </article>
+
+      <!-- ===== Proyecto 3: API Urban Grocers ===== -->
+      <article class="project-card fade-up">
+        <div class="project-content">
+          <h3>Pruebas de API — Urban Grocers</h3>
+          <div class="project-tags">
+            <span class="project-tag">API Testing</span>
+            <span class="project-tag">Postman</span>
+            <span class="project-tag">Apidoc</span>
+          </div>
+
+          <div class="project-meta">
+            <div>
+              <div class="label">Aplicación probada</div>
+              <div class="value">Urban Grocers — API backend</div>
+            </div>
+            <div>
+              <div class="label">Tipo de pruebas</div>
+              <div class="value">Pruebas funcionales de API · HTTP</div>
+            </div>
+            <div>
+              <div class="label">Herramientas</div>
+              <div class="value">Postman · Jira · Apidoc</div>
+            </div>
+            <div>
+              <div class="label">Modalidad</div>
+              <div class="value">Proyecto académico (TripleTen)</div>
+            </div>
+          </div>
+
+          <p style="margin-bottom: 18px; color:#3a3a42;">
+            Realicé pruebas funcionales sobre los endpoints de la API de Urban Grocers, asegurando
+            la cobertura de los escenarios de negocio y la correcta integración de las actualizaciones
+            de la plataforma.
+          </p>
+
+          <ul class="project-activities">
+            <li>Analicé los requisitos del backend con Apidoc para lograr cobertura de los escenarios de negocio.</li>
+            <li>Ejecuté pruebas funcionales sobre endpoints enviando solicitudes HTTP desde Postman.</li>
+            <li>Detecté fallas lógicas en el servidor y las reporté en Jira con pasos de reproducción y evidencia.</li>
+          </ul>
+
+          <a href="https://github.com/Johanna-80" target="_blank" rel="noopener" class="project-link">
+            Ver repositorio en GitHub →
+          </a>
+        </div>
+
+        <div class="project-visual">
+          <img src="assets/img/proyecto-api.jpg"
+               alt="Postman ejecutando endpoints de Urban Grocers"
+               loading="lazy"
+               onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder-art&quot;><span class=&quot;big&quot;>🔌</span>API Testing · Postman</div>';">
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCIA TRANSFERIBLE ============ -->
+  <section id="experiencia" class="section section-transfer">
+    <div class="container">
+      <span class="eyebrow">Experiencia y habilidades transferibles</span>
+      <h2 class="section-title">Lo que traigo desde el mundo empresarial</h2>
+      <p class="section-subtitle">
+        Mi experiencia previa en administración y coordinación de operaciones aporta una base sólida
+        de habilidades que se traducen directamente al rol de QA.
+      </p>
+
+      <div class="transfer-list">
+        <div class="transfer-item fade-up">
+          <h4>Constructora Gustohuasy Cía. Ltda.</h4>
+          <p class="role-line">Presidencia · 01/2010 – 07/2024</p>
+          <p>
+            Ejercí la representación legal y lideré la coalición empresarial, supervisando nómina,
+            gestión de talento y campañas de marketing. Coordiné las actividades operativas y ejecuté
+            los acuerdos de la junta con enfoque en planificación estratégica y control de gestión,
+            mitigando riesgos y garantizando el cumplimiento normativo.
+          </p>
+        </div>
+
+        <div class="transfer-item fade-up">
+          <h4>Mamcorp. Cía. Ltda.</h4>
+          <p class="role-line">Coordinadora de Operaciones y Logística de Campo · 11/2013 – 11/2014</p>
+          <p>
+            Lideré el contacto institucional con alcaldes a nivel nacional y gestioné permisos
+            municipales, asegurando la viabilidad legal y territorial de los eventos. Coordiné la
+            seguridad de los eventos con altos mandos de la Policía Nacional y supervisé las
+            actividades logísticas de campo bajo cronogramas previstos.
+          </p>
+        </div>
+      </div>
+
+      <div class="soft-skills">
+        <span class="soft-skill">Comunicación asertiva</span>
+        <span class="soft-skill">Priorización de tareas</span>
+        <span class="soft-skill">Pensamiento analítico</span>
+        <span class="soft-skill">Coordinación de equipos</span>
+        <span class="soft-skill">Resiliencia bajo presión</span>
+        <span class="soft-skill">Orientación al servicio</span>
+        <span class="soft-skill">Liderazgo positivo</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FORMACIÓN ============ -->
+  <section id="formacion" class="section">
+    <div class="container">
+      <span class="eyebrow">Formación</span>
+      <h2 class="section-title">Educación y certificaciones</h2>
+      <p class="section-subtitle">
+        Formación técnica actual en QA Engineering, complementada con base universitaria en
+        Administración de Empresas e Inteligencia de Negocios.
+      </p>
+
+      <div class="education-grid">
+        <div class="edu-card fade-up">
+          <span class="year">En curso · 2026</span>
+          <h4>QA Engineering Certificate</h4>
+          <p class="institution">TripleTen</p>
+        </div>
+
+        <div class="edu-card fade-up">
+          <span class="year">2022 – 2023</span>
+          <h4>Tecnología Superior en Administración de Empresas e Inteligencia de Negocios</h4>
+          <p class="institution">ISTE</p>
+        </div>
+      </div>
+
+      <div class="langs">
+        <span class="lang-badge">Español · Nativo</span>
+        <span class="lang-badge">Inglés · Básico</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACTO / FOOTER ============ -->
+  <footer id="contacto">
+    <div class="container">
+      <h2>¿Conversamos sobre tu próxima vacante de QA?</h2>
+      <p>
+        Estoy abierta a oportunidades junior como QA Engineer (Manual / API Testing), donde pueda
+        aportar mi formación técnica y mi experiencia previa en administración y análisis de negocio.
+      </p>
+
+      <div class="footer-buttons">
+        <a href="mailto:johannavasquez69@gmail.com" class="btn btn-primary">✉ Enviar correo</a>
+        <a href="https://wa.me/593998489356" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp</a>
+        <a href="https://www.linkedin.com/in/johanna-vasquez-333b95411/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+        <a href="https://github.com/Johanna-80" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+      </div>
+
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/johanna-vasquez-333b95411/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="https://github.com/Johanna-80" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+      </div>
+
+      <div class="footer-meta">
+        © 2026 Johanna Vásquez · QA Engineer Jr. · Quito, Ecuador
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ==== Preloader ====
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      setTimeout(() => preloader.classList.add('hide'), 400);
+    });
+
+    // ==== Menú hamburguesa ====
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuToggle.classList.toggle('active', open);
+      menuToggle.setAttribute('aria-expanded', open);
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', false);
+      });
+    });
+
+    // ==== Animación de entrada ====
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
