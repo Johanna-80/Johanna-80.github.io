@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portafolio de Johanna Vásquez — QA Engineer Jr. con formación en testing manual, validación de API (Postman) y gestión de casos de prueba en Jira.">
   <meta name="author" content="Johanna Vásquez">
+  <meta name="theme-color" content="#17171a">
+  <script>document.documentElement.classList.add('js');</script>
 
   <title>Johanna Vásquez | QA Engineer Jr.</title>
 
@@ -12,7 +14,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Johanna Vásquez | QA Engineer Jr.">
   <meta property="og:description" content="Testing manual, validación de API y aseguramiento de calidad de software.">
-  <meta property="og:image" content="https://placehold.co/1200x630/7c3aed/ffffff?text=Johanna+V%C3%A1squez+QA+Engineer">
+  <meta property="og:image" content="https://johanna-80.github.io/assets/img/johanna-profesional.png">
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- ============ FAVICON SVG INLINE ============ -->
@@ -58,6 +60,16 @@
     a { text-decoration: none; color: inherit; transition: 0.3s; }
     ul { list-style: none; }
     img { max-width: 100%; height: auto; display: block; }
+    button { font: inherit; }
+    :focus-visible { outline: 3px solid #a78bfa; outline-offset: 4px; }
+    section[id], footer[id] { scroll-margin-top: calc(var(--header-height) + 16px); }
+    .skip-link {
+      position: fixed; left: 16px; top: -90px; z-index: 10000;
+      background: #fff; color: var(--color-accent-dark);
+      border: 2px solid var(--color-accent); border-radius: 10px;
+      padding: 10px 16px; font-weight: 700;
+    }
+    .skip-link:focus { top: 14px; }
 
     /* ============ UTILIDADES ============ */
     .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
@@ -144,11 +156,12 @@
       inset: 0;
       background: #17171a;
       z-index: 9999;
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
       transition: opacity 0.5s ease, visibility 0.5s ease;
     }
+    .js #preloader { display: flex; }
     #preloader.hide { opacity: 0; visibility: hidden; }
     .loader {
       width: 46px;
@@ -201,6 +214,7 @@
       color: var(--color-text);
     }
     .nav-links a:hover { color: var(--color-accent); }
+    .nav-links a:not(.btn):focus-visible { color: var(--color-accent-dark); }
     .nav-links .btn { padding: 9px 20px; font-size: 0.88rem; }
 
     /* Menú hamburguesa */
@@ -227,10 +241,10 @@
 
     /* ============ HERO ============ */
     .hero {
-      padding: 70px 0 90px;
+      padding: 72px 0 86px;
       background:
-        radial-gradient(circle at 85% 20%, var(--color-accent-soft) 0%, transparent 45%),
-        radial-gradient(circle at 10% 90%, #f3ecff 0%, transparent 40%);
+        radial-gradient(circle at 85% 20%, #e7dbff 0%, transparent 48%),
+        radial-gradient(circle at 8% 85%, #f3ecff 0%, transparent 43%);
     }
     .hero-layout {
       display: grid;
@@ -258,11 +272,114 @@
       margin-bottom: 34px;
     }
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-status {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: #fff; color: #34303f; border: 1px solid #dfd1f9;
+      border-radius: 100px; padding: 7px 13px; font-size: 0.77rem;
+      font-weight: 700; margin-bottom: 20px; box-shadow: 0 6px 25px rgba(83,45,137,.06);
+    }
+    .status-dot { height: 8px; width: 8px; border-radius: 50%; background: #14b88a; }
+    .hero-footnote { font-size: .82rem; color: #5d5a68; margin-top: 17px; }
+    .hero-footnote a { color:var(--color-accent-dark); font-weight:700; text-decoration:underline; text-underline-offset:3px; }
+
+    /* ============ LABORATORIO VERIFICABLE / EVIDENCIAS ============ */
+    .evidence-section {
+      background: #11131d; color: #fff;
+      padding: 76px 0; position: relative; overflow: hidden;
+    }
+    .evidence-section::before {
+      content: ''; position: absolute; width: 460px; height: 460px;
+      border-radius: 50%; right: -140px; top: -170px;
+      background: radial-gradient(circle, rgba(124,58,237,.24), transparent 68%);
+      pointer-events: none;
+    }
+    .evidence-layout { display: grid; grid-template-columns: .95fr 1.05fr; gap: 48px; align-items: center; position: relative; }
+    .evidence-section .eyebrow { color: #c5b5ff; }
+    .evidence-section h2 { color: #fff; font-size: clamp(1.75rem, 3vw, 2.7rem); }
+    .evidence-section p { color: #c3c3d3; margin: 14px 0 24px; }
+    .proof-metrics { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; margin: 24px 0 28px; }
+    .proof-metric { border: 1px solid #353248; border-radius: 15px; padding: 15px 12px; background: rgba(255,255,255,.04); }
+    .proof-metric strong { display:block; color:#fff; font:800 clamp(1.4rem,2.2vw,2rem) var(--font-primary); letter-spacing:-.06em; }
+    .proof-metric span { display:block; color:#b9b9cc; font-size:.73rem; line-height:1.4; margin-top:7px; }
+    .proof-note { color:#aaa7ba; font-size:.75rem; }
+    .evidence-section .project-link { color: #cdbbff; }
+    .evidence-section .project-link:hover { color: #fff; }
+    .code-window { border:1px solid #383448; border-radius: 20px; overflow:hidden; background:#1c1e2a; box-shadow:0 20px 60px #08070c70; }
+    .code-bar { padding:13px 17px; display:flex; align-items:center; justify-content:space-between; background:#282937; border-bottom:1px solid #3c3a4e; gap:12px; }
+    .code-dots { display:flex; gap:7px; }
+    .code-dots i { width:9px; height:9px; border-radius:50%; background:#e66c7d; }
+    .code-dots i:nth-child(2) { background:#edbf5a; }
+    .code-dots i:nth-child(3) { background:#58cfa3; }
+    .code-file { color:#bbb9cc; font:600 .72rem monospace; }
+    .code-window pre { padding:26px 24px; margin:0; overflow-x:auto; color:#ececf5; font: .82rem/1.9 'SFMono-Regular',Consolas,Monaco,monospace; }
+    .code-window .purple { color:#c6a5ff; }
+    .code-window .green { color:#8de4bf; }
+    .code-window .orange { color:#ffc98d; }
+    .code-console { padding:16px 24px; border-top:1px solid #343346; color:#8de4bf; font:.83rem/1.7 monospace; background:#161824; }
+    .console-note { color:#9a9baa; font-size:.71rem; margin-top:4px; }
+
+    /* ============ MÉTODO DE TRABAJO ============ */
+    .workflow-section { padding: 80px 0; background:#f8f6fc; }
+    .workflow-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:14px; }
+    .workflow-item { background:#fff; border:1px solid #e6e0f1; border-radius:17px; padding:24px 19px; }
+    .workflow-item .number { display:inline-flex; align-items:center; justify-content:center; border-radius:11px; width:36px; height:36px; background:#ede7ff; color:#5b21b6; font:800 .85rem var(--font-primary); margin-bottom:18px; }
+    .workflow-item h3 { font-size:.97rem; letter-spacing:-.02em; margin-bottom:10px; }
+    .workflow-item p { font-size:.83rem; line-height:1.55; color:#55515e; }
+
+    /* ============ TARJETAS EDITORIALES DE PROYECTOS ============ */
+    .project-toolbar { display:flex; gap:14px; justify-content:space-between; align-items:center; flex-wrap:wrap; margin-bottom:30px; }
+    .project-filters { display:flex; flex-wrap:wrap; gap:8px; }
+    .project-filter { border:1px solid #dcd5eb; color:#4f4961; background:#fff; border-radius:100px; padding:9px 16px; cursor:pointer; font-size:.88rem; font-weight:700; transition:background .2s,border-color .2s,color .2s; }
+    .project-filter:hover { border-color:var(--color-accent); color:var(--color-accent-dark); }
+    .project-filter[aria-pressed="true"] { background:var(--color-accent); border-color:var(--color-accent); color:#fff; }
+    .project-count { font-size:.86rem; color:#676174; }
+    .project-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+    .project-list .project-card, .project-list .project-card.reverse {
+      display:flex; flex-direction:column; align-items:stretch; gap:0; direction:ltr;
+      margin:0; overflow:hidden; border:1px solid #e7e3ef; border-radius:21px;
+      background:#fff; box-shadow:0 10px 30px rgba(23,18,46,.055);
+      transition:transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .project-list .project-card:hover { transform:translateY(-4px); border-color:#c9b4f5; box-shadow:0 16px 40px rgba(71,32,142,.11); }
+    .project-list .project-card[hidden] { display:none !important; }
+    .project-list .project-content { padding:30px; display:flex; flex-direction:column; align-items:flex-start; flex:1; }
+    .project-list .project-card h3 { font-size:clamp(1.24rem,2vw,1.62rem); }
+    .project-list .project-tags { margin-bottom:16px; }
+    .project-list .project-meta { width:100%; margin-bottom:19px; }
+    .project-list .project-activities { margin-bottom:23px; }
+    .project-description { margin-bottom:18px; color:#3a3a42; }
+    .project-list .project-activities li { text-align:left; font-size:.87rem; }
+    .project-list .project-link { margin-top:auto; }
+    .project-secondary { display:inline-flex; margin-top:9px; color:#605378; font-size:.82rem; font-weight:600; text-decoration:underline; text-underline-offset:3px; }
+    .project-secondary:hover { color:var(--color-accent-dark); }
+    .project-list .project-visual { order:-1; border-radius:0; box-shadow:none; aspect-ratio:unset; height:220px; padding:0; overflow:hidden; }
+    .project-list .project-visual img { border-radius:0; object-fit:cover; }
+    .project-list .featured-card { grid-column:span 2; display:grid; grid-template-columns:1fr 1fr; background:#f7f3ff; }
+    .project-list .featured-card .project-content { grid-column:1; grid-row:1; padding:42px; }
+    .project-list .featured-card .project-visual { grid-column:2; grid-row:1; order:initial; height:auto; min-height:410px; aspect-ratio:unset; border-radius:0; }
+    .project-number { color:#8b7da5; font:700 .73rem var(--font-primary); letter-spacing:.16em; margin-bottom:13px; text-transform:uppercase; }
+    .project-result { border-radius:12px; background:#f2edff; color:#4e2a90; padding:12px 14px; font-size:.87rem; line-height:1.55; margin:0 0 19px; width:100%; }
+    .project-result strong { color:#38176e; }
+    .project-list .featured-card .project-result { background:#e9dfff; }
+    .visual-abstract { width:100%; height:100%; padding:26px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:13px; position:relative; }
+    .visual-abstract .visual-label { font:700 .67rem var(--font-primary); letter-spacing:.16em; text-transform:uppercase; color:#9e92b1; }
+    .visual-abstract strong { font:800 clamp(1.8rem,2.7vw,2.8rem)/1.15 var(--font-primary); letter-spacing:-.06em; color:#fff; }
+    .visual-abstract p { font-size:.83rem; line-height:1.5; color:#c5c4d5; max-width:260px; }
+    .visual-abstract .visual-pill { background:#ffffff1e; border:1px solid #ffffff40; border-radius:100px; color:#fff; font:600 .78rem monospace; padding:8px 13px; }
+    .visual-api { background: radial-gradient(circle at 90% 15%,#51387d,#151523 70%); }
+    .visual-ui { background:linear-gradient(140deg,#251b45,#7e54c2); }
+    .visual-scooter { background:linear-gradient(135deg,#261d44,#4f3495 75%,#9c75ea); }
+    .visual-abstract .visual-chips { display:flex; justify-content:center; flex-wrap:wrap; gap:9px; }
+    .visual-dark-panel { width:100%; height:100%; padding:30px; display:flex; flex-direction:column; justify-content:center; background:linear-gradient(145deg,#14131f,#2b204b); }
+    .visual-dark-panel .code-window { width:100%; box-shadow:none; }
+    .visual-dark-panel .code-window pre { padding:20px; font-size:.78rem; }
+    .visual-real-label { position:absolute; left:15px; bottom:15px; background:#fff; color:#35264e; font-size:.72rem; font-weight:700; padding:7px 12px; border-radius:8px; box-shadow:0 4px 14px #0002; }
     .hero-photo { position: relative; }
     .hero-photo img {
       width: 100%;
-      aspect-ratio: 1 / 1.1;
+      aspect-ratio: 4 / 5;
       object-fit: cover;
+      object-position: center 28%;
       border-radius: 22px;
       box-shadow:
         18px 18px 0 rgba(124, 58, 237, 0.10),
@@ -606,20 +723,49 @@
         margin-bottom: 80px;
       }
       .section { padding: 70px 0; }
+      .evidence-layout { grid-template-columns:1fr; gap:30px; }
+      .workflow-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+      .project-list .project-card, .project-list .project-card.reverse { margin:0; display:flex; gap:0; }
+      .project-list .featured-card { grid-column:span 2; }
+      .project-list .featured-card .project-content { grid-column:auto; grid-row:auto; padding:30px; }
+      .project-list .featured-card .project-visual { grid-column:auto; grid-row:auto; order:-1; height:285px; min-height:0; }
     }
 
     @media (max-width: 480px) {
       .project-meta { grid-template-columns: 1fr; }
       .hero-actions .btn,
       .footer-buttons .btn { width: 100%; }
+      .project-list { grid-template-columns:1fr; }
+      .project-list .featured-card { grid-column:auto; }
+      .project-list .project-content, .project-list .featured-card .project-content { padding:25px 21px; }
+      .project-toolbar { align-items:flex-start; }
+      .workflow-grid { grid-template-columns:1fr; }
+      .proof-metrics { gap:7px; }
+      .proof-metric { padding:12px 9px; }
+      .code-window pre { font-size:.7rem; padding:18px 13px; }
+    }
+
+    @media (min-width:481px) and (max-width:750px) {
+      .project-list { grid-template-columns:1fr; }
+      .project-list .featured-card { grid-column:auto; }
+      .workflow-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      *, *::before, *::after { scroll-behavior:auto !important; animation-duration:.01ms !important; transition-duration:.01ms !important; }
+      .js .fade-up { opacity:1; transform:none; }
     }
 
     /* Animación de entrada suave */
-    .fade-up { opacity: 0; transform: translateY(24px); transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+    .fade-up { opacity:1; transform:none; }
+    .js .fade-up { opacity: 0; transform: translateY(24px); transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion:reduce) { .js .fade-up { opacity:1; transform:none; } }
   </style>
 </head>
 <body>
+
+  <a href="#contenido" class="skip-link">Saltar al contenido</a>
 
   <div id="preloader" aria-hidden="true"><div class="loader"></div></div>
 
@@ -658,29 +804,68 @@
     </div>
   </header>
 
+  <main id="contenido">
   <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="container hero-layout">
       <div>
+        <p class="hero-status"><span class="status-dot" aria-hidden="true"></span> Portafolio QA · Evidencias en GitHub</p>
         <p class="hero-role">QA Engineer Jr. · Manual & API Testing</p>
         <h1>
-          Calidad de software con <span class="accent">visión de negocio</span> y datos.
+          Hola, soy Johanna. <span class="accent">Pruebo software con visión de negocio.</span>
         </h1>
         <p class="hero-sub">
-          Formación en QA Engineering, Administración de Empresas e Inteligencia de Negocios.
-          Enfocada en el diseño y ejecución de pruebas funcionales y de regresión que conectan los
-          requisitos técnicos con los objetivos comerciales del producto.
+          Diseño casos, verifico resultados y documento hallazgos. Combino mi experiencia en
+          procesos de negocio con proyectos prácticos de testing manual, API y automatización,
+          respaldados por código y evidencias públicas.
         </p>
         <div class="hero-actions">
-          <a href="#proyectos" class="btn btn-primary">Ver proyectos de QA</a>
+          <a href="#proyectos" class="btn btn-primary">Explorar mis proyectos</a>
           <a href="#contacto" class="btn btn-outline">Contactarme</a>
         </div>
+        <p class="hero-footnote">Quito, Ecuador · <a href="https://github.com/Johanna-80/Johanna-80.github.io" target="_blank" rel="noopener noreferrer">Ver código HTML/CSS/JS de este sitio ↗</a></p>
       </div>
       <div class="hero-photo fade-up">
-        <img src="assets/img/johanna.jpg"
-             alt="Foto profesional de Johanna Vásquez"
-             loading="lazy"
+        <!-- 📸 Foto profesional elegida por Johanna: assets/img/johanna-profesional.png -->
+        <img src="assets/img/johanna-profesional.png"
+             alt="Retrato profesional de Johanna Vásquez con blazer oscuro y fondo claro"
+             loading="eager" fetchpriority="high" decoding="async"
              onerror="this.onerror=null; this.src='https://placehold.co/480x530/ede9fe/5b21b6?text=Johanna+V%C3%A1squez';">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EVIDENCIA TÉCNICA VERIFICADA ============ -->
+  <section id="laboratorio" class="evidence-section" aria-labelledby="evidence-title">
+    <div class="container evidence-layout">
+      <div class="fade-up">
+        <span class="eyebrow">Laboratorio QA · Proyecto independiente</span>
+        <h2 id="evidence-title">De los casos de prueba al código que se ejecuta.</h2>
+        <p>
+          Mi proyecto <strong>DummyJSON API QA</strong> combina pruebas de endpoints, escenarios
+          positivos y negativos, aserciones con Python/pytest y una colección de Postman.
+          La ejecución automatizada en GitHub Actions aporta evidencia reproducible.
+        </p>
+        <div class="proof-metrics" aria-label="Indicadores verificables del portafolio">
+          <div class="proof-metric"><strong>19/19</strong><span>pruebas Python aprobadas*</span></div>
+          <div class="proof-metric"><strong>5</strong><span>repositorios QA públicos</span></div>
+          <div class="proof-metric"><strong>1</strong><span>pipeline CI verificado</span></div>
+        </div>
+        <a href="https://github.com/Johanna-80/dummyjson-api-qa/actions/runs/41006876260" target="_blank" rel="noopener noreferrer" class="project-link">Examinar la ejecución de GitHub Actions ↗</a>
+        <p class="proof-note">* Resultado registrado el 30/10/2026. No es un estado en tiempo real; DummyJSON simula operaciones de escritura.</p>
+      </div>
+      <div class="code-window fade-up" aria-label="Extracto de una prueba real del repositorio DummyJSON">
+        <div class="code-bar"><span class="code-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="code-file">tests/test_products.py</span></div>
+        <pre><code><span class="purple">def</span> <span class="green">test_p03_producto_inexistente_devuelve_404</span>(api):
+    response = api.get(
+        <span class="orange">f"{BASE_URL}/products/99999999"</span>,
+        timeout=TIMEOUT
+    )
+    <span class="purple">assert</span> response.status_code == <span class="orange">404</span>
+    <span class="purple">assert</span> <span class="orange">"message"</span> <span class="purple">in</span> response.json()</code></pre>
+        <div class="code-console">✓ 19 passed · pytest
+          <div class="console-note">Ejemplo real de código · resultado de la ejecución del 30/10/2026</div>
+        </div>
       </div>
     </div>
   </section>
@@ -701,15 +886,16 @@
         <p>
           Soy profesional en <strong>Administración de Empresas</strong> con formación en
           <strong>Inteligencia de Negocios</strong> y actualmente cursando el certificado de
-          <strong>QA Engineering</strong> en TripleTen. Mi perfil integra la visión comercial y el
-          análisis de datos con competencias técnicas de testing.
+          <strong>QA Engineering</strong>. Mi perfil conecta la visión de negocio, el análisis de
+          datos y la práctica de pruebas de software.
         </p>
 
         <p>
           A lo largo de mi formación he desarrollado <strong>proyectos prácticos de testing manual y
-          validación de API</strong> sobre aplicaciones web (Urban Routes y Urban Grocers), aplicando
+          validación de API y automatización</strong> sobre Urban Routes, Urban Grocers y Urban Scooter, y
+          también un proyecto independiente con DummyJSON. He aplicado
           diseño de casos de prueba, técnicas de partición de equivalencia y valores límite,
-          documentación de defectos en Jira y ejecución de solicitudes HTTP en Postman.
+          documentación de defectos en Jira y pruebas HTTP con Postman y pytest.
         </p>
 
         <p>
@@ -743,7 +929,8 @@
             <span class="skill-tag">Testing manual</span>
             <span class="skill-tag">Pruebas funcionales</span>
             <span class="skill-tag">Pruebas de regresión</span>
-            <span class="skill-tag">Pruebas de UI/UX</span>
+            <span class="skill-tag">Pruebas funcionales de interfaz</span>
+            <span class="skill-tag">Revisión de claridad de navegación</span>
             <span class="skill-tag">Diseño de casos de prueba</span>
           </div>
         </div>
@@ -753,8 +940,7 @@
           <div class="skill-tags">
             <span class="skill-tag">Partición de equivalencia</span>
             <span class="skill-tag">Análisis de valores límite</span>
-            <span class="skill-tag">Mapas mentales</span>
-            <span class="skill-tag">Diagramas de flujo</span>
+            <span class="skill-tag">Escenarios positivos y negativos</span>
           </div>
         </div>
 
@@ -764,6 +950,10 @@
             <span class="skill-tag">Postman</span>
             <span class="skill-tag">Jira</span>
             <span class="skill-tag">Apidoc</span>
+            <span class="skill-tag">Python · Selenium · pytest (en práctica)</span>
+            <span class="skill-tag">GitHub Actions · CI (proyecto propio)</span>
+            <span class="skill-tag">Git · Chrome DevTools (básico)</span>
+            <span class="skill-tag">HTML5 · CSS3 · JavaScript (este portafolio)</span>
           </div>
         </div>
 
@@ -774,9 +964,28 @@
             <span class="skill-tag">Inteligencia de Negocios</span>
             <span class="skill-tag">Gestión de Proyectos</span>
             <span class="skill-tag">Análisis de datos</span>
+            <span class="skill-tag">Excel · Power BI (intermedio)</span>
+            <span class="skill-tag">Google Sheets (avanzado)</span>
+            <span class="skill-tag">SQL (básico)</span>
             <span class="skill-tag">Optimización de procesos</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CÓMO TRABAJO COMO QA ============ -->
+  <section class="workflow-section" id="metodologia" aria-labelledby="workflow-title">
+    <div class="container">
+      <span class="eyebrow">Cómo trabajo · Mi método</span>
+      <h2 id="workflow-title" class="section-title">Cómo paso de un requisito a una evidencia.</h2>
+      <p class="section-subtitle">Un proceso aplicado en mis prácticas y proyectos; los pasos concretos dependen del alcance de cada prueba.</p>
+      <div class="workflow-grid">
+        <div class="workflow-item fade-up"><span class="number">01</span><h3>Entender</h3><p>Reviso requisitos, flujos y criterios de aceptación del producto.</p></div>
+        <div class="workflow-item fade-up"><span class="number">02</span><h3>Diseñar</h3><p>Preparo casos positivos, negativos y datos con equivalencia y valores límite.</p></div>
+        <div class="workflow-item fade-up"><span class="number">03</span><h3>Ejecutar</h3><p>Compruebo el comportamiento de UI y API; automatizo cuando aporta valor.</p></div>
+        <div class="workflow-item fade-up"><span class="number">04</span><h3>Documentar</h3><p>Comparo resultado esperado y observado, y registro evidencias e incidencias.</p></div>
+        <div class="workflow-item fade-up"><span class="number">05</span><h3>Dar seguimiento</h3><p>Organizo resultados y reviso el estado de correcciones y nuevas ejecuciones.</p></div>
       </div>
     </div>
   </section>
@@ -785,20 +994,75 @@
   <section id="proyectos" class="section">
     <div class="container">
       <span class="eyebrow">Proyectos de QA</span>
-      <h2 class="section-title">Casos prácticos de aseguramiento de calidad</h2>
+      <h2 class="section-title">Proyectos con código, casos y resultados.</h2>
       <p class="section-subtitle">
-        Cada proyecto describe la aplicación probada, el tipo de pruebas realizado, las herramientas
-        utilizadas y las principales actividades desarrolladas.
+        Cada tarjeta enlaza una evidencia pública. Distingo las pruebas automatizadas de los
+        ejercicios manuales y señalo las limitaciones de reproducción de los entornos académicos.
       </p>
 
-      <!-- ===== Proyecto 1: Regresión Urban Routes ===== -->
-      <article class="project-card fade-up">
+      <!-- Filtros con estado accesible: su funcionamiento se prueba en checks/portfolio.test.mjs -->
+      <div class="project-toolbar">
+        <div class="project-filters" role="group" aria-label="Filtrar proyectos">
+          <button class="project-filter" type="button" data-filter="all" aria-pressed="true" aria-controls="projectList">Todos</button>
+          <button class="project-filter" type="button" data-filter="manual" aria-pressed="false" aria-controls="projectList">Testing manual</button>
+          <button class="project-filter" type="button" data-filter="api" aria-pressed="false" aria-controls="projectList">API Testing</button>
+          <button class="project-filter" type="button" data-filter="automation" aria-pressed="false" aria-controls="projectList">Automatización UI</button>
+        </div>
+        <p class="project-count" id="projectCount" role="status" aria-live="polite">6 proyectos</p>
+      </div>
+
+      <div class="project-list" id="projectList">
+
+      <!-- ===== Proyecto destacado: API Testing independiente con CI real ===== -->
+      <article class="project-card featured-card fade-up" data-category="api">
         <div class="project-content">
+          <span class="project-number">01 / Proyecto independiente · Destacado</span>
+          <h3>DummyJSON — API Testing con CI</h3>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">pytest</span>
+            <span class="project-tag">Postman</span>
+            <span class="project-tag">GitHub Actions</span>
+          </div>
+          <div class="project-meta">
+            <div><div class="label">Sistema</div><div class="value">DummyJSON · API pública</div></div>
+            <div><div class="label">Cobertura</div><div class="value">Productos · Carritos · Autenticación</div></div>
+            <div><div class="label">Tipo</div><div class="value">API funcional · Casos negativos</div></div>
+            <div><div class="label">Respaldo</div><div class="value">Pruebas · Matriz · Colección · CI</div></div>
+          </div>
+          <p class="project-result"><strong>19/19 pruebas Python aprobadas</strong> en la ejecución del 30/10/2026. Incluye 19 solicitudes Postman documentadas; su ejecución en Postman queda por validar.</p>
+          <ul class="project-activities">
+            <li>Validé búsqueda, paginación, estados HTTP y estructuras JSON.</li>
+            <li>Probé escenarios positivos/negativos y operaciones CRUD simuladas.</li>
+            <li>Configuré ejecución automatizada en GitHub Actions y reporte JUnit.</li>
+          </ul>
+          <a href="https://github.com/Johanna-80/dummyjson-api-qa" target="_blank" rel="noopener noreferrer" class="project-link">Ver proyecto, pruebas y documentación ↗</a>
+          <a href="https://github.com/Johanna-80/dummyjson-api-qa/blob/main/postman/DummyJSON_QA.postman_collection.json" target="_blank" rel="noopener noreferrer" class="project-secondary">Abrir colección Postman en GitHub</a>
+        </div>
+        <div class="project-visual">
+          <div class="visual-dark-panel">
+            <div class="code-window" aria-label="Resumen visual de la suite de API">
+              <div class="code-bar"><span class="code-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="code-file">api-testing / pytest</span></div>
+              <pre><code><span class="purple">GET</span>  /products/1
+<span class="purple">GET</span>  /products/search?q=phone
+<span class="orange">POST</span> /products/add
+<span class="orange">PUT</span>  /products/1
+<span class="green">✓</span>    19 tests passed</code></pre>
+              <div class="code-console">CI · GitHub Actions <span aria-hidden="true">✓</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ===== Proyecto 1: Regresión Urban Routes ===== -->
+      <article class="project-card fade-up" data-category="manual">
+        <div class="project-content">
+          <span class="project-number">02 / Testing manual</span>
           <h3>Pruebas de Regresión — Urban Routes</h3>
           <div class="project-tags">
             <span class="project-tag">Testing Manual</span>
             <span class="project-tag">Regresión</span>
-            <span class="project-tag">UI/UX</span>
+            <span class="project-tag">Interfaz web</span>
           </div>
 
           <div class="project-meta">
@@ -808,7 +1072,7 @@
             </div>
             <div>
               <div class="label">Tipo de pruebas</div>
-              <div class="value">Regresión · UI/UX · Funcional</div>
+              <div class="value">Regresión · Interfaz · Funcional</div>
             </div>
             <div>
               <div class="label">Herramientas</div>
@@ -816,38 +1080,43 @@
             </div>
             <div>
               <div class="label">Modalidad</div>
-              <div class="value">Proyecto académico (TripleTen)</div>
+              <div class="value">Práctica académica documentada</div>
             </div>
           </div>
 
-          <p style="margin-bottom: 18px; color:#3a3a42;">
+          <p class="project-description">
             Verifiqué la estabilidad de la aplicación de transporte Urban Routes después de una
-            actualización, asegurando que la funcionalidad y la experiencia de usuario siguieran
-            operativas tras los cambios.
+            actualización, revisando sus flujos, controles y respuestas frente a los requisitos.
           </p>
+
+          <p class="project-result"><strong>Evidencias:</strong> matrices, casos funcionales y documentos de reporte de errores disponibles en Portafolio-QA.</p>
 
           <ul class="project-activities">
             <li>Diseñé y ejecuté casos de prueba integrales para validar la funcionalidad post-actualización.</li>
-            <li>Documenté y reporté fallos críticos mediante informes detallados sobre discrepancias e inconsistencias detectadas.</li>
-            <li>Validé el correcto funcionamiento de los flujos principales y de la experiencia de usuario (UI/UX).</li>
+            <li>Registré defectos y diferencias entre resultados esperados y observados.</li>
+            <li>Revisé botones, formularios, navegación y mensajes de la interfaz.</li>
           </ul>
 
-          <a href="https://github.com/Johanna-80" target="_blank" rel="noopener" class="project-link">
-            Ver repositorio en GitHub →
+          <a href="https://github.com/Johanna-80/Portafolio-QA" target="_blank" rel="noopener noreferrer" class="project-link">
+            Ver informes y casos de prueba en GitHub →
           </a>
+          <a href="https://github.com/Johanna-80/Portafolio-QA/blob/main/Informe_de_Errores_Proyecto_QA.pdf" target="_blank" rel="noopener noreferrer" class="project-secondary">Consultar informe de errores (PDF)</a>
         </div>
 
         <div class="project-visual">
+          <!-- 🖼️ Captura real de matriz de pruebas; reemplazable por evidencia de regresión más específica. -->
           <img src="assets/img/proyecto-regresion.jpg"
-               alt="Captura de casos de prueba de regresión — Urban Routes"
+               alt="Ejemplo de matriz de casos de prueba documentada en hoja de cálculo"
                loading="lazy"
-               onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder-art&quot;><span class=&quot;big&quot;>🧪</span>Regresión · UI/UX</div>';">
+               onerror="this.onerror=null; this.nextElementSibling.textContent='Imagen no disponible'; this.remove();">
+          <span class="visual-real-label">Matriz de pruebas · captura real</span>
         </div>
       </article>
 
       <!-- ===== Proyecto 2: Técnicas de Testing Urban Routes ===== -->
-      <article class="project-card reverse fade-up">
+      <article class="project-card reverse fade-up" data-category="manual">
         <div class="project-content">
+          <span class="project-number">03 / Diseño de pruebas</span>
           <h3>Implementación de Técnicas de Testing — Urban Routes</h3>
           <div class="project-tags">
             <span class="project-tag">Diseño de Casos</span>
@@ -866,18 +1135,20 @@
             </div>
             <div>
               <div class="label">Herramientas</div>
-              <div class="value">Mapas mentales · Diagramas de flujo</div>
+              <div class="value">Google Sheets · Diagramas de flujo</div>
             </div>
             <div>
               <div class="label">Modalidad</div>
-              <div class="value">Proyecto académico (TripleTen)</div>
+              <div class="value">Práctica académica documentada</div>
             </div>
           </div>
 
-          <p style="margin-bottom: 18px; color:#3a3a42;">
+          <p class="project-description">
             Apliqué técnicas formales de diseño de pruebas para maximizar la cobertura de escenarios
             y validar la lógica de negocio de funciones específicas de la aplicación.
           </p>
+
+          <p class="project-result"><strong>Entregables:</strong> matriz de clases de equivalencia, diagramas y casos de prueba de caja negra.</p>
 
           <ul class="project-activities">
             <li>Modelé escenarios de prueba mediante mapas mentales para la función "Agregar Licencia de Conducir".</li>
@@ -886,22 +1157,26 @@
             <li>Desarrollé casos de prueba específicos que validaron la precisión matemática y operativa del servicio.</li>
           </ul>
 
-          <a href="https://github.com/Johanna-80" target="_blank" rel="noopener" class="project-link">
-            Ver repositorio en GitHub →
+          <a href="https://github.com/Johanna-80/Portafolio-QA" target="_blank" rel="noopener noreferrer" class="project-link">
+            Ver matrices y casos de prueba en GitHub →
           </a>
+          <a href="https://github.com/Johanna-80/Portafolio-QA/blob/main/Matriz%20de%20Clases%20de%20Equivalencia.pdf" target="_blank" rel="noopener noreferrer" class="project-secondary">Consultar matriz de equivalencia (PDF)</a>
         </div>
 
         <div class="project-visual">
+          <!-- 🖼️ Diagrama real de análisis de requisitos, conservado desde la versión anterior. -->
           <img src="assets/img/proyecto-tecnicas.jpg"
                alt="Mapa mental y diagrama de flujo — diseño de pruebas"
                loading="lazy"
-               onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder-art&quot;><span class=&quot;big&quot;>🧭</span>Diseño de pruebas</div>';">
+               onerror="this.onerror=null; this.nextElementSibling.textContent='Imagen no disponible'; this.remove();">
+          <span class="visual-real-label">Diagrama · evidencia real</span>
         </div>
       </article>
 
       <!-- ===== Proyecto 3: API Urban Grocers ===== -->
-      <article class="project-card fade-up">
+      <article class="project-card fade-up" data-category="api">
         <div class="project-content">
+          <span class="project-number">04 / API Testing académico</span>
           <h3>Pruebas de API — Urban Grocers</h3>
           <div class="project-tags">
             <span class="project-tag">API Testing</span>
@@ -924,35 +1199,117 @@
             </div>
             <div>
               <div class="label">Modalidad</div>
-              <div class="value">Proyecto académico (TripleTen)</div>
+              <div class="value">Práctica académica y código de pruebas</div>
             </div>
           </div>
 
-          <p style="margin-bottom: 18px; color:#3a3a42;">
-            Realicé pruebas funcionales sobre los endpoints de la API de Urban Grocers, asegurando
-            la cobertura de los escenarios de negocio y la correcta integración de las actualizaciones
-            de la plataforma.
+          <p class="project-description">
+            Automaticé casos de prueba sobre el endpoint de creación de kits de Urban Grocers,
+            con énfasis en las reglas del campo <code>name</code> y datos válidos e inválidos.
           </p>
 
+          <p class="project-result"><strong>Código disponible:</strong> solicitudes HTTP y aserciones Python para la creación de kits. El entorno académico puede no estar disponible públicamente.</p>
+
           <ul class="project-activities">
-            <li>Analicé los requisitos del backend con Apidoc para lograr cobertura de los escenarios de negocio.</li>
-            <li>Ejecuté pruebas funcionales sobre endpoints enviando solicitudes HTTP desde Postman.</li>
-            <li>Detecté fallas lógicas en el servidor y las reporté en Jira con pasos de reproducción y evidencia.</li>
+            <li>Preparé solicitudes autenticadas a los endpoints de usuarios y kits.</li>
+            <li>Implementé escenarios en Python con Requests y pytest.</li>
+            <li>Registré resultados y comparé respuestas con reglas del campo probado.</li>
           </ul>
 
-          <a href="https://github.com/Johanna-80" target="_blank" rel="noopener" class="project-link">
+          <a href="https://github.com/Johanna-80/qa-project-Urban-Grocers-app-es" target="_blank" rel="noopener noreferrer" class="project-link">
             Ver repositorio en GitHub →
           </a>
+          <a href="https://github.com/Johanna-80/qa-project-Urban-Grocers-app-es/blob/main/create_kit_name_kit_test.py" target="_blank" rel="noopener noreferrer" class="project-secondary">Consultar el archivo de pruebas Python</a>
         </div>
 
         <div class="project-visual">
-          <img src="assets/img/proyecto-api.jpg"
-               alt="Postman ejecutando endpoints de Urban Grocers"
-               loading="lazy"
-               onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;placeholder-art&quot;><span class=&quot;big&quot;>🔌</span>API Testing · Postman</div>';">
+          <div class="visual-abstract visual-api" role="img" aria-label="Ilustración de pruebas API Urban Grocers; no es una captura del sistema">
+            <span class="visual-label">Representación visual · No captura</span>
+            <strong>POST /kits</strong>
+            <span class="visual-pill">Requests + pytest</span>
+            <p>Datos válidos e inválidos para la creación de kits</p>
+          </div>
         </div>
       </article>
 
+      <!-- ===== Proyecto 4: Automatización Urban Routes ===== -->
+      <article class="project-card reverse fade-up" data-category="automation">
+        <div class="project-content">
+          <span class="project-number">05 / Automatización UI</span>
+          <h3>Automatización de interfaz — Urban Routes</h3>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Selenium</span>
+            <span class="project-tag">pytest</span>
+          </div>
+          <div class="project-meta">
+            <div><div class="label">Aplicación probada</div><div class="value">Urban Routes — reserva de taxis</div></div>
+            <div><div class="label">Tipo de pruebas</div><div class="value">Automatización funcional de interfaz</div></div>
+            <div><div class="label">Herramientas</div><div class="value">Python · Selenium · pytest</div></div>
+            <div><div class="label">Evidencia</div><div class="value">Código fuente y documentación</div></div>
+          </div>
+          <p class="project-description">
+            Desarrollé pruebas automatizadas a partir de la exploración de elementos HTML para
+            comprobar etapas del flujo de solicitud de un taxi.
+          </p>
+          <p class="project-result"><strong>9 escenarios documentados</strong> en el README del proyecto, desde la ruta hasta la confirmación de solicitud. No se presenta un resultado de ejecución reciente.</p>
+          <ul class="project-activities">
+            <li>Organicé localizadores e interacciones utilizando Page Object Model.</li>
+            <li>Implementé escenarios para direcciones, tarifa, teléfono, pago y confirmación.</li>
+            <li>Utilicé esperas explícitas para elementos dinámicos.</li>
+          </ul>
+          <a href="https://github.com/Johanna-80/qa-project-Urban-Routes-es" target="_blank" rel="noopener noreferrer" class="project-link">Ver código de automatización en GitHub →</a>
+          <a href="https://github.com/Johanna-80/qa-project-Urban-Routes-es/blob/main/tests/test_urban_routes.py" target="_blank" rel="noopener noreferrer" class="project-secondary">Consultar los escenarios de Selenium</a>
+        </div>
+        <div class="project-visual">
+          <div class="visual-abstract visual-ui" role="img" aria-label="Ilustración de la estructura POM de Urban Routes; no es una captura de ejecución">
+            <span class="visual-label">Representación técnica · No captura</span>
+            <strong>Page Object Model</strong>
+            <div class="visual-chips"><span class="visual-pill">Python</span><span class="visual-pill">Selenium</span><span class="visual-pill">pytest</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ===== Proyecto 5: Proyecto final Urban Scooter ===== -->
+      <article class="project-card fade-up" data-category="manual">
+        <div class="project-content">
+          <span class="project-number">06 / Proyecto final de formación</span>
+          <h3>Proyecto final QA — Urban Scooter</h3>
+          <div class="project-tags">
+            <span class="project-tag">Web</span>
+            <span class="project-tag">Móvil</span>
+            <span class="project-tag">API</span>
+          </div>
+          <div class="project-meta">
+            <div><div class="label">Aplicación probada</div><div class="value">Urban Scooter — plataforma de alquiler</div></div>
+            <div><div class="label">Tipo de pruebas</div><div class="value">Funcionales · Formularios · API</div></div>
+            <div><div class="label">Herramientas</div><div class="value">Hojas de cálculo · Jira · Postman</div></div>
+            <div><div class="label">Evidencia</div><div class="value">Casos y resultados del Sprint 10</div></div>
+          </div>
+          <p class="project-description">
+            Evalué el seguimiento web de pedidos, la validación de formularios, los flujos
+            de repartidores en móvil y los endpoints de la API. El repositorio presenta
+            resultados registrados y áreas pendientes de documentación.
+          </p>
+          <p class="project-result"><strong>88 estados registrados en cuatro áreas:</strong> 39 aprobados y 49 no aprobados. Son resultados de casos documentados, no 49 defectos únicos.</p>
+          <ul class="project-activities">
+            <li>Diseñé escenarios con clases de equivalencia y valores límite.</li>
+            <li>Registré estados de pruebas aprobadas y no aprobadas.</li>
+            <li>Documenté hallazgos para dar seguimiento a incidencias.</li>
+          </ul>
+          <a href="https://github.com/Johanna-80/urban-scooter-qa" target="_blank" rel="noopener noreferrer" class="project-link">Ver casos y resultados en GitHub →</a>
+          <a href="https://github.com/Johanna-80/urban-scooter-qa/tree/main/test-cases" target="_blank" rel="noopener noreferrer" class="project-secondary">Abrir matrices CSV de las cuatro áreas</a>
+        </div>
+        <div class="project-visual">
+          <div class="visual-abstract visual-scooter" role="img" aria-label="Ilustración de los tres frentes de prueba de Urban Scooter; no es una captura del sistema">
+            <span class="visual-label">Representación técnica · No captura</span>
+            <strong>Web + Móvil + API</strong>
+            <div class="visual-chips"><span class="visual-pill">Casos CSV</span><span class="visual-pill">Jira</span><span class="visual-pill">Postman</span></div>
+          </div>
+        </div>
+      </article>
+
+      </div><!-- /project-list -->
     </div>
   </section>
 
@@ -971,10 +1328,9 @@
           <h4>Constructora Gustohuasy Cía. Ltda.</h4>
           <p class="role-line">Presidencia · 01/2010 – 07/2024</p>
           <p>
-            Ejercí la representación legal y lideré la coalición empresarial, supervisando nómina,
-            gestión de talento y campañas de marketing. Coordiné las actividades operativas y ejecuté
-            los acuerdos de la junta con enfoque en planificación estratégica y control de gestión,
-            mitigando riesgos y garantizando el cumplimiento normativo.
+            Ejercí funciones de representación y coordinación administrativa. Revisé documentación,
+            elaboré informes de seguimiento cada 15 a 30 días y participé en visitas técnicas para
+            verificar el avance de los proyectos y comunicar observaciones oportunamente.
           </p>
         </div>
 
@@ -982,10 +1338,10 @@
           <h4>Mamcorp. Cía. Ltda.</h4>
           <p class="role-line">Coordinadora de Operaciones y Logística de Campo · 11/2013 – 11/2014</p>
           <p>
-            Lideré el contacto institucional con alcaldes a nivel nacional y gestioné permisos
-            municipales, asegurando la viabilidad legal y territorial de los eventos. Coordiné la
-            seguridad de los eventos con altos mandos de la Policía Nacional y supervisé las
-            actividades logísticas de campo bajo cronogramas previstos.
+            Coordiné proyectos y gestiones municipales para actividades vinculadas con IECE y SENESCYT,
+            manteniendo comunicación con autoridades locales. Apoyé la organización de eventos y
+            la obtención de formularios de asistencia. Este trabajo se desarrolló simultáneamente,
+            por proyectos, con mis responsabilidades en la constructora.
           </p>
         </div>
       </div>
@@ -1033,6 +1389,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- ============ CONTACTO / FOOTER ============ -->
   <footer id="contacto">
     <div class="container">
@@ -1065,10 +1423,10 @@
   </footer>
 
   <script>
-    // ==== Preloader ====
+    // ==== Preloader (el contenido se mantiene visible sin JavaScript) ====
     window.addEventListener('load', () => {
       const preloader = document.getElementById('preloader');
-      setTimeout(() => preloader.classList.add('hide'), 400);
+      if (preloader) setTimeout(() => preloader.classList.add('hide'), 300);
     });
 
     // ==== Menú hamburguesa ====
@@ -1087,16 +1445,46 @@
       });
     });
 
-    // ==== Animación de entrada ====
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
+    // ==== Filtros accesibles de proyectos ==== 
+    // Cada tarjeta declara su área con data-category. No se necesita una librería externa.
+    const filterButtons = document.querySelectorAll('.project-filter');
+    const projectCards = document.querySelectorAll('.project-card');
+    const projectCount = document.getElementById('projectCount');
+
+    function filterProjects(category) {
+      let visibleCount = 0;
+      projectCards.forEach(card => {
+        const isVisible = category === 'all' || card.dataset.category === category;
+        card.hidden = !isVisible;
+        if (isVisible) visibleCount++;
       });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+      filterButtons.forEach(button => {
+        button.setAttribute('aria-pressed', String(button.dataset.filter === category));
+      });
+
+      projectCount.textContent = `${visibleCount} ${visibleCount === 1 ? 'proyecto' : 'proyectos'}`;
+    }
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => filterProjects(button.dataset.filter));
+    });
+
+    // ==== Animación de entrada ====
+    const fadeElements = document.querySelectorAll('.fade-up');
+    if (typeof IntersectionObserver === 'function' && !window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.06 });
+      fadeElements.forEach(el => observer.observe(el));
+    } else {
+      fadeElements.forEach(el => el.classList.add('visible'));
+    }
   </script>
 </body>
 </html>
