@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portafolio de Johanna Vásquez — QA Engineer Jr. con formación en testing manual, validación de API (Postman) y gestión de casos de prueba en Jira.">
+  <meta name="description" content="Johanna Vásquez, QA Engineer Jr. Pruebas funcionales, de regresión y API con Postman, Python, pytest y Jira. Portafolio con proyectos y evidencias verificables.">
   <meta name="author" content="Johanna Vásquez">
   <meta name="theme-color" content="#17171a">
   <script>document.documentElement.classList.add('js');</script>
@@ -13,7 +13,7 @@
   <!-- ============ OPEN GRAPH / REDES SOCIALES ============ -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Johanna Vásquez | QA Engineer Jr.">
-  <meta property="og:description" content="Testing manual, validación de API y aseguramiento de calidad de software.">
+  <meta property="og:description" content="Casos de prueba, validación de API, Python, pytest y documentación de resultados de QA.">
   <meta property="og:image" content="https://johanna-80.github.io/assets/img/johanna-profesional.png">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -761,6 +761,27 @@
     .js .fade-up { opacity: 0; transform: translateY(24px); transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
     @media (prefers-reduced-motion:reduce) { .js .fade-up { opacity:1; transform:none; } }
+
+    /* Ajustes editoriales solicitados: la fotografía acompaña, no compite con el texto. */
+    html, body { overflow-x: clip; }
+    .hero-layout { grid-template-columns: minmax(0,1.45fr) minmax(250px,.55fr); gap: 44px; }
+    .hero h1 { max-width: 720px; font-size: clamp(36px, 4vw, 55px); line-height: 1.12; }
+    .hero-photo { width: 100%; max-width: 330px; margin-left: auto; }
+    .hero-photo img { border-radius: 18px; box-shadow: 10px 10px 0 #eee6ff, 0 0 0 1px #dfd2f3; }
+    .about-layout { grid-template-columns: minmax(145px,.4fr) minmax(0,1.6fr); gap: 50px; align-items: start; }
+    .about-photo { max-width: 250px; aspect-ratio: 1 / 1.18; border-radius: 16px; box-shadow: 8px 8px 0 var(--color-accent-soft); }
+    .about-quote { font-style: normal; padding: 14px 18px; border-left: 3px solid var(--color-accent); background:#f7f4ff; border-radius:0 9px 9px 0; }
+    .hero-sub, .about-text p { line-height: 1.75; }
+    @media (max-width:900px) {
+      .hero-layout { grid-template-columns: 1fr; }
+      .hero-photo { margin: 0 auto; max-width: 290px; }
+      .about-layout { grid-template-columns: 1fr; gap: 26px; }
+      .about-photo { width: 200px; max-width: 200px; margin: 0 auto; }
+    }
+    @media (max-width:480px) {
+      .hero-photo { max-width: 250px; }
+      .hero h1 { font-size: clamp(30px,8vw,40px); }
+    }
   </style>
 </head>
 <body>
@@ -812,12 +833,12 @@
         <p class="hero-status"><span class="status-dot" aria-hidden="true"></span> Portafolio QA · Evidencias en GitHub</p>
         <p class="hero-role">QA Engineer Jr. · Manual & API Testing</p>
         <h1>
-          Hola, soy Johanna. <span class="accent">Pruebo software con visión de negocio.</span>
+          Soy Johanna Vásquez. <span class="accent">Compruebo funciones, APIs y datos.</span>
         </h1>
         <p class="hero-sub">
-          Diseño casos, verifico resultados y documento hallazgos. Combino mi experiencia en
-          procesos de negocio con proyectos prácticos de testing manual, API y automatización,
-          respaldados por código y evidencias públicas.
+          Diseño y ejecuto casos funcionales y de regresión. Uso Postman, Jira, Python y pytest
+          para revisar respuestas, comparar resultados y dejar evidencia clara de los problemas.
+          También aporto experiencia en coordinación y seguimiento de proyectos.
         </p>
         <div class="hero-actions">
           <a href="#proyectos" class="btn btn-primary">Explorar mis proyectos</a>
@@ -830,7 +851,7 @@
         <img src="assets/img/johanna-profesional.png"
              alt="Retrato profesional de Johanna Vásquez con blazer oscuro y fondo claro"
              loading="eager" fetchpriority="high" decoding="async"
-             onerror="this.onerror=null; this.src='https://placehold.co/480x530/ede9fe/5b21b6?text=Johanna+V%C3%A1squez';">
+             onerror="this.onerror=null; this.src='assets/img/johanna-about.jpg';">
       </div>
     </div>
   </section>
@@ -840,11 +861,11 @@
     <div class="container evidence-layout">
       <div class="fade-up">
         <span class="eyebrow">Laboratorio QA · Proyecto independiente</span>
-        <h2 id="evidence-title">De los casos de prueba al código que se ejecuta.</h2>
+        <h2 id="evidence-title">Pruebas de API con resultados comprobables.</h2>
         <p>
-          Mi proyecto <strong>DummyJSON API QA</strong> combina pruebas de endpoints, escenarios
-          positivos y negativos, aserciones con Python/pytest y una colección de Postman.
-          La ejecución automatizada en GitHub Actions aporta evidencia reproducible.
+          En <strong>DummyJSON</strong> preparé pruebas de productos, carritos y autenticación.
+          Utilicé Requests y pytest para validar respuestas HTTP y datos JSON. También organicé
+          las solicitudes en Postman y configuré su ejecución con GitHub Actions.
         </p>
         <div class="proof-metrics" aria-label="Indicadores verificables del portafolio">
           <div class="proof-metric"><strong>19/19</strong><span>pruebas Python aprobadas*</span></div>
@@ -877,38 +898,28 @@
         <img src="assets/img/johanna-about.jpg"
              alt="Johanna Vásquez"
              loading="lazy"
-             onerror="this.onerror=null; this.src='https://placehold.co/500x620/f7f5fb/5b21b6?text=Johanna+V%C3%A1squez';">
+             onerror="this.onerror=null; this.src='assets/img/johanna-profesional.png';">
       </div>
       <div class="about-text fade-up">
         <span class="eyebrow">Sobre mí</span>
-        <h2 class="section-title">De la administración al aseguramiento de calidad.</h2>
-
+        <h2 class="section-title">Qué hago como QA.</h2>
         <p>
-          Soy profesional en <strong>Administración de Empresas</strong> con formación en
-          <strong>Inteligencia de Negocios</strong> y actualmente cursando el certificado de
-          <strong>QA Engineering</strong>. Mi perfil conecta la visión de negocio, el análisis de
-          datos y la práctica de pruebas de software.
+          Me enfoco en verificar que una aplicación haga lo que indican sus requisitos. Diseño
+          casos de prueba, reviso formularios y navegación, y comparo el resultado esperado
+          con el que realmente devuelve el sistema.
         </p>
-
         <p>
-          A lo largo de mi formación he desarrollado <strong>proyectos prácticos de testing manual y
-          validación de API y automatización</strong> sobre Urban Routes, Urban Grocers y Urban Scooter, y
-          también un proyecto independiente con DummyJSON. He aplicado
-          diseño de casos de prueba, técnicas de partición de equivalencia y valores límite,
-          documentación de defectos en Jira y pruebas HTTP con Postman y pytest.
+          Trabajo con <strong>Postman, Jira, Google Sheets, Python y pytest</strong>. En mi
+          proyecto de API con DummyJSON preparé 19 comprobaciones automatizadas y las ejecuté
+          mediante GitHub Actions. Los resultados y el código están publicados en GitHub.
         </p>
-
         <p>
-          Mi experiencia previa liderando procesos administrativos y coordinando equipos me dio
-          habilidades transferibles clave para QA: <strong>comunicación asertiva, priorización de
-          tareas y pensamiento analítico</strong>, útiles para articular al equipo de negocio con el
-          equipo de desarrollo.
+          Antes de trabajar en QA coordiné proyectos y revisé documentación, informes y avances
+          técnicos. Esa experiencia me ayuda a entender los requisitos de negocio, dar seguimiento
+          a los pendientes y comunicar con claridad lo que encuentro al probar una funcionalidad.
         </p>
-
-        <p class="about-quote">
-          "Mi objetivo es asegurar que el producto final cumpla tanto con los requisitos técnicos
-          como con los objetivos comerciales."
-        </p>
+        <p class="about-quote"><strong>En un reporte de error dejo lo esencial:</strong> qué probé,
+          qué esperaba, qué ocurrió y cómo reproducirlo.</p>
       </div>
     </div>
   </section>
@@ -917,9 +928,9 @@
   <section id="habilidades" class="section section-skills">
     <div class="container">
       <span class="eyebrow">Habilidades técnicas</span>
-      <h2 class="section-title">Herramientas y metodologías</h2>
+      <h2 class="section-title">Herramientas que utilizo</h2>
       <p class="section-subtitle">
-        Conocimientos adquiridos durante mi formación en QA y aplicados en proyectos prácticos de testing.
+        Diseño escenarios, ejecuto pruebas, valido respuestas y registro incidencias con estas herramientas.
       </p>
 
       <div class="skills-grid">
@@ -978,8 +989,8 @@
   <section class="workflow-section" id="metodologia" aria-labelledby="workflow-title">
     <div class="container">
       <span class="eyebrow">Cómo trabajo · Mi método</span>
-      <h2 id="workflow-title" class="section-title">Cómo paso de un requisito a una evidencia.</h2>
-      <p class="section-subtitle">Un proceso aplicado en mis prácticas y proyectos; los pasos concretos dependen del alcance de cada prueba.</p>
+      <h2 id="workflow-title" class="section-title">Así reviso una funcionalidad.</h2>
+      <p class="section-subtitle">Empiezo por los requisitos y termino con resultados que otra persona puede revisar.</p>
       <div class="workflow-grid">
         <div class="workflow-item fade-up"><span class="number">01</span><h3>Entender</h3><p>Reviso requisitos, flujos y criterios de aceptación del producto.</p></div>
         <div class="workflow-item fade-up"><span class="number">02</span><h3>Diseñar</h3><p>Preparo casos positivos, negativos y datos con equivalencia y valores límite.</p></div>
@@ -994,10 +1005,9 @@
   <section id="proyectos" class="section">
     <div class="container">
       <span class="eyebrow">Proyectos de QA</span>
-      <h2 class="section-title">Proyectos con código, casos y resultados.</h2>
+      <h2 class="section-title">Pruebas y proyectos que puedes revisar.</h2>
       <p class="section-subtitle">
-        Cada tarjeta enlaza una evidencia pública. Distingo las pruebas automatizadas de los
-        ejercicios manuales y señalo las limitaciones de reproducción de los entornos académicos.
+        En cada proyecto encontrarás las pruebas que preparé, las herramientas que usé y el enlace al archivo o repositorio correspondiente.
       </p>
 
       <!-- Filtros con estado accesible: su funcionamiento se prueba en checks/portfolio.test.mjs -->
@@ -1079,14 +1089,13 @@
               <div class="value">Jira · Google Sheets</div>
             </div>
             <div>
-              <div class="label">Modalidad</div>
-              <div class="value">Práctica académica documentada</div>
+              <div class="label">Evidencia</div>
+              <div class="value">Matrices, casos y reportes públicos</div>
             </div>
           </div>
 
           <p class="project-description">
-            Verifiqué la estabilidad de la aplicación de transporte Urban Routes después de una
-            actualización, revisando sus flujos, controles y respuestas frente a los requisitos.
+            Revisé formularios, botones y navegación de Urban Routes después de cambios en la aplicación, y registré las diferencias frente a lo esperado.
           </p>
 
           <p class="project-result"><strong>Evidencias:</strong> matrices, casos funcionales y documentos de reporte de errores disponibles en Portafolio-QA.</p>
@@ -1138,14 +1147,13 @@
               <div class="value">Google Sheets · Diagramas de flujo</div>
             </div>
             <div>
-              <div class="label">Modalidad</div>
-              <div class="value">Práctica académica documentada</div>
+              <div class="label">Evidencia</div>
+              <div class="value">Matrices, casos y reportes públicos</div>
             </div>
           </div>
 
           <p class="project-description">
-            Apliqué técnicas formales de diseño de pruebas para maximizar la cobertura de escenarios
-            y validar la lógica de negocio de funciones específicas de la aplicación.
+            Diseñé entradas de prueba con clases de equivalencia y valores límite para revisar formularios y cálculos de tarifas.
           </p>
 
           <p class="project-result"><strong>Entregables:</strong> matriz de clases de equivalencia, diagramas y casos de prueba de caja negra.</p>
@@ -1198,8 +1206,8 @@
               <div class="value">Postman · Jira · Apidoc</div>
             </div>
             <div>
-              <div class="label">Modalidad</div>
-              <div class="value">Práctica académica y código de pruebas</div>
+              <div class="label">Evidencia</div>
+              <div class="value">Código de pruebas y escenarios</div>
             </div>
           </div>
 
@@ -1273,7 +1281,7 @@
       <!-- ===== Proyecto 5: Proyecto final Urban Scooter ===== -->
       <article class="project-card fade-up" data-category="manual">
         <div class="project-content">
-          <span class="project-number">06 / Proyecto final de formación</span>
+          <span class="project-number">06 / Pruebas web, móvil y API</span>
           <h3>Proyecto final QA — Urban Scooter</h3>
           <div class="project-tags">
             <span class="project-tag">Web</span>
@@ -1319,8 +1327,7 @@
       <span class="eyebrow">Experiencia y habilidades transferibles</span>
       <h2 class="section-title">Lo que traigo desde el mundo empresarial</h2>
       <p class="section-subtitle">
-        Mi experiencia previa en administración y coordinación de operaciones aporta una base sólida
-        de habilidades que se traducen directamente al rol de QA.
+        He trabajado coordinando personas, gestionando documentación y haciendo seguimiento de proyectos. Estas son las tareas que puedo trasladar a un equipo de QA.
       </p>
 
       <div class="transfer-list">
@@ -1394,10 +1401,9 @@
   <!-- ============ CONTACTO / FOOTER ============ -->
   <footer id="contacto">
     <div class="container">
-      <h2>¿Conversamos sobre tu próxima vacante de QA?</h2>
+      <h2>Hablemos de QA y de tu producto.</h2>
       <p>
-        Estoy abierta a oportunidades junior como QA Engineer (Manual / API Testing), donde pueda
-        aportar mi formación técnica y mi experiencia previa en administración y análisis de negocio.
+        Busco oportunidades como QA Engineer Jr. Puedo aportar diseño de pruebas, validación de API, documentación de incidencias y seguimiento de resultados.
       </p>
 
       <div class="footer-buttons">
